@@ -1,0 +1,37 @@
+/* 
+Theme Name: Eigen Thema
+Theme URI: http://example.com/eigen-thema
+Description: Eigen Thema voor eigen website
+Author: Firstname Lastname
+Author URI: http://example.com
+Version: 1.0
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    background-image: url(wr-100m.jpg);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#content {
+    padding: 20px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    bottom: 0;
+}
+
