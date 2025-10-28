@@ -13,6 +13,10 @@
 
 
 <header>
+    <div class="header-image-wrap">
+        <img class="site-header-image" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/wr-100m.jpg" alt="Header image">
+    </div>
     <h1><?php bloginfo('name'); ?></h1>
     <p><?php bloginfo('description'); ?></p>
 </header>
+<?php do_action('after_theme_header'); ?>
