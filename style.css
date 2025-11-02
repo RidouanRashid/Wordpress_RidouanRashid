@@ -1,22 +1,47 @@
-/* 
-Theme Name: Eigen Thema
-Theme URI: http://example.com/eigen-thema
-Description: Eigen Thema voor eigen website
-Author: Firstname Lastname
-Author URI: http://example.com
-Version: 1.0
-*/
+/**
+ * Eigen Thema Stylesheet
+ * 
+ * Theme Name: Eigen Thema
+ * Theme URI: http://example.com/eigen-thema
+ * Description: Eigen Thema voor atletiek wereldrecords website
+ * Author: Firstname Lastname
+ * Author URI: http://example.com
+ * Version: 1.0
+ * 
+ * Dit stylesheet bevat alle styling voor het eigen-thema.
+ * Bevat layout, kleuren, responsiviteit en component styling.
+ */
 
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+/**
+ * Body Styling
+ * 
+ * Grid layout zorgt dat footer altijd onderaan blijft
+ * Minimale hoogte van viewport
+ */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;  /* Header, content, footer */
     min-height: 100vh;
 }
 
+/* ========================================
+   HEADER STYLES
+   ======================================== */
+
+/**
+ * Header styling
+ * 
+ * Donkere achtergrond met witte tekst
+ * Gecentreerd layout
+ */
 header {
     background-color: #111;
     color: #fff;
@@ -30,6 +55,11 @@ header {
     padding: 0 20px;
 }
 
+/**
+ * Header afbeelding wrapper
+ * 
+ * Flexbox centering voor logo/header image
+ */
 .header-image-wrap {
     display: flex;
     justify-content: center;
@@ -37,23 +67,42 @@ header {
     margin: 0 auto 20px;
 }
 
+/**
+ * Header afbeelding styling
+ * 
+ * Responsive sizing met max-width
+ * Shadow effect voor diepte
+ */
 .site-header-image {
     display: block;
     margin: 0 auto;
     width: auto;
-    max-width: 700px; 
-    height: auto;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+    max-width: 700px;  /* Maximale breedte */
+    height: auto;      /* Behoud aspect ratio */
+    box-shadow: 0 18px 40px rgba(0,0,0,0.6);  /* Diepe shadow */
     border-radius: 6px;
     background-color: #fff;
     padding: 6px;
 }
 
+/**
+ * Mobile responsiviteit voor header
+ */
 @media (max-width: 720px) {
     .site-header-image { max-width: 90%; padding: 4px; }
     header { padding: 40px 0 20px; }
 }
 
+/* ========================================
+   PLUGIN MESSAGE STYLES
+   ======================================== */
+
+/**
+ * Plugin message banner
+ * 
+ * Wordt getoond via eerste-plugin.php
+ * Donkere background met wit tekst
+ */
 .plugin-message {
     background-color: #222;
     color: #fff;
@@ -69,11 +118,23 @@ header {
     font-size: 16px;
 }
 
+/* ========================================
+   CONTENT AREA STYLES
+   ======================================== */
+
 #content {
     padding: 20px;
 }
 
-/* Wereldrecords styling */
+/* ========================================
+   RECORDS GRID STYLES
+   ======================================== */
+
+/**
+ * Wereldrecords container
+ * 
+ * Witte box met shadow voor records sectie
+ */
 .wereldrecords-lijst {
     margin: 30px 0;
     padding: 20px;
@@ -88,6 +149,12 @@ header {
     color: #333;
 }
 
+/**
+ * Records grid layout
+ * 
+ * Responsive grid: minimum 250px kolommen
+ * Auto-fit zorgt voor dynamische kolom count
+ */
 .records-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -95,6 +162,11 @@ header {
     padding: 10px;
 }
 
+/**
+ * Individual record card styling
+ * 
+ * Hover effect: tilt omhoog met shadow toename
+ */
 .record-card {
     background: #f8f8f8;
     padding: 20px;
@@ -104,23 +176,39 @@ header {
     border: 1px solid #eee;
 }
 
+/**
+ * Record card hover effect
+ * 
+ * Animatie: translatie omhoog + shadow vergroting
+ */
 .record-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* Record card elementen */
 .record-card h3 {
     color: #222;
     margin: 0 0 10px 0;
     font-size: 1.1em;
 }
 
+/**
+ * Record holder styling
+ * 
+ * Naam van recordhouder met italic styling
+ */
 .record-holder {
     color: #666;
     margin: 5px 0;
     font-style: italic;
 }
 
+/**
+ * Record waarde styling
+ * 
+ * Tijd/afstand - groot en vet weergegeven
+ */
 .record-value {
     font-size: 1.4em;
     color: #111;
@@ -128,12 +216,20 @@ header {
     margin: 10px 0;
 }
 
+/**
+ * Record jaar/datum
+ */
 .record-year {
     color: #888;
     font-size: 0.9em;
     margin: 5px 0 0 0;
 }
 
+/**
+ * Record details box
+ * 
+ * Container voor record metadata
+ */
 .record-details {
     background: #f8f8f8;
     padding: 20px;
@@ -142,6 +238,11 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
+/**
+ * Record info list styling
+ * 
+ * Verwijderde default ul/li styling
+ */
 .record-info {
     list-style: none;
     padding: 0;
@@ -157,11 +258,25 @@ header {
     border-bottom: none;
 }
 
+/**
+ * Record info labels
+ */
 .record-info strong {
     display: inline-block;
     width: 100px;
     color: #333;
 }
+
+/* ========================================
+   FOOTER STYLES
+   ======================================== */
+
+/**
+ * Footer styling
+ * 
+ * Donkere achtergrond, gecentreerd
+ * Blijft onderaan pagina dankzij grid layout
+ */
 footer {
     background-color: #333;
     color: white;
@@ -170,7 +285,17 @@ footer {
     bottom: 0;
 }
 
-/* Widget Styling */
+/* ========================================
+   WIDGET STYLES
+   ======================================== */
+
+/**
+ * Widget styling
+ * 
+ * Basis styling voor alle WordPress widgets
+ * Inclusief Info Blok widgets
+ * Responsive breedte: max 800px of 90%
+ */
 .widget {
     background-color: #f5f5f5;
     color: #333;
@@ -183,6 +308,11 @@ footer {
     width: 90%;
 }
 
+/**
+ * Widget titel styling
+ * 
+ * Prominent display met border-bottom
+ */
 .widget h3 {
     color: #222;
     font-size: 1.2em;
@@ -191,6 +321,9 @@ footer {
     border-bottom: 1px solid #ddd;
 }
 
+/**
+ * Widget inhoud paragraphs
+ */
 .widget p {
     color: #333;
     line-height: 1.6;
@@ -202,7 +335,16 @@ footer {
     padding: 10px 0;
 }
 
-/* Sidebar area styling */
+/* ========================================
+   SIDEBAR STYLES
+   ======================================== */
+
+/**
+ * Sidebar area styling
+ * 
+ * Primary sidebar met subtiele achtergrond
+ * Bevat alle widgets
+ */
 #sidebar-primary {
     padding: 20px;
     background-color: rgba(17, 17, 17, 0.02);

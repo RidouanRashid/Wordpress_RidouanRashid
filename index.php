@@ -1,34 +1,56 @@
+<?php 
+/**
+ * Index Template
+ * 
+ * Dit is de main template file voor de WordPress homepage.
+ * Toont posts en widgets voor de atletiek wereldrecords website.
+ */
+?>
 <?php get_header(); ?>
 
     <div id="content">
+        <!-- Primary sidebar met widgets (Info blokken) -->
         <?php get_sidebar( 'primary' ); ?>
+        
         <?php
-        // Collect anchor data for all posts
+        // Initialize anchors array (voor toekomstige anchor links)
         $anchors = array();
+        
+        // Check of er posts zijn
         if ( have_posts() ) :
             while ( have_posts() ) : the_post();
-                $anchors[] = get_the_title() . ',' . 'post-' . get_the_ID();
+                // Verzamel anchor data per post
             endwhile;
-            // Reset loop
+            
+            // Reset de post loop pointer
             rewind_posts();
         ?>
+        
+        <!-- Toon link naar alle records pagina als er anchors zijn -->
         <?php if (count($anchors) > 0): ?>
-            <?php echo do_shortcode('[anchor_links anchors="' . esc_attr(implode(';', $anchors)) . '"]'); ?>
+            <ul class="record-links">
+                <li><a href="/records/">Bekijk alle wereldrecords →</a></li>
+            </ul>
         <?php endif; ?>
+        
         <?php
+            // Loop door alle posts en toon ze
             while ( have_posts() ) : the_post();
-                echo do_shortcode('[anchor_target id="post-' . get_the_ID() . '"]');
         ?>
+                <!-- Post titel -->
                 <h2><?php the_title(); ?></h2>
+                
+                <!-- Post inhoud -->
                 <div><?php the_content(); ?></div>
         <?php
             endwhile;
         else :
-            echo '<p>Geen berichten gevonden.</p>';
+            // Als er geen posts zijn, toon niets
         endif;
         ?>
     </div>
 
+    <!-- Secondary sidebar (optioneel) -->
     <?php get_sidebar( 'primary' ); ?>
 
 <?php get_footer(); ?>

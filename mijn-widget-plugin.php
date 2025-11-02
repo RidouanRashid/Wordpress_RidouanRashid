@@ -1,17 +1,25 @@
 <?php
-/*
-Plugin Name: Mijn Widget Plugin
-Plugin URI: http://voorbeeld.com/
-Description: Een plugin met een zelfgemaakte widget.
-Version: 1.0
-Author: Jouw Naam
-Author URI: http://voorbeeld.com/
-License: GPLv2 or later
-*/
+/**
+ * Mijn Widget Plugin
+ * 
+ * Plugin Name: Mijn Widget Plugin
+ * Plugin URI: http://voorbeeld.com/
+ * Description: Een plugin met een zelfgemaakte widget voor inspirerende teksten over wereldrecords.
+ * Version: 1.0
+ * Author: Jouw Naam
+ * Author URI: http://voorbeeld.com/
+ * License: GPLv2 or later
+ * 
+ * Dit plugin voegt een eenvoudige widget toe die inspirerende inhoud toont
+ * over wereldrecords en hun betekenis.
+ */
 
-
-
-// Widgetklasse maken die de WP_Widget klasse uitbreidt
+/**
+ * Widgetklasse: Mijn_Eigen_Widget
+ * 
+ * Extends WP_Widget voor aangepaste widget functionaliteit.
+ * Dit widget toont informatieve teksten over wereldrecords.
+ */
 class Mijn_Eigen_Widget extends WP_Widget {
 
     // Constructor: dit stelt de widget in
